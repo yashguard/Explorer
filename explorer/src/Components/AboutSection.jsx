@@ -11,14 +11,12 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function AboutSection() {
+function AboutSection(props) {
   return (
     <section className="about-section padding100">
       <Container>
         <Row className="align-items-center justify-content-center">
-          <Col
-            className="about-image col-12 col-md-11 col-lg-8 col-xl-6"
-          >
+          <Col className="about-image col-12 col-md-11 col-lg-8 col-xl-6">
             <img src={img1} className="image-1 rounded-top" alt="" />
             <img src={img2} className="image-2" alt="" />
             <img src={img3} className="shape-1" alt="" />
@@ -28,9 +26,7 @@ function AboutSection() {
             <img src={img7} className="shape-5 d-none d-md-block" alt="" />
             <img src={img8} className="shape-6" alt="" />
           </Col>
-          <Col
-            className="col-12 col-md-11 col-lg-8 col-xl-6"
-          >
+          <Col className="col-12 col-md-11 col-lg-8 col-xl-6">
             <div className="common-className">
               <span className="fs-6 fw-bold clr-theme-1 text-capitalize ps-5">
                 about company
@@ -45,7 +41,14 @@ function AboutSection() {
                 craft beautiful store experiences with design tools that you
                 want.
               </p>
-              <button className="common-btn bg-danger px-4 py-3 rounded-3 border-0 text-white text-uppercase fw-bolder">
+              <button
+                style={{
+                  backgroundColor:
+                    props.check == true ? `${props.colors}` : "#dc3545",
+                  transition: "all 0.5s",
+                }}
+                className="common-btn px-4 py-3 rounded-3 border-0 text-white text-uppercase fw-bolder"
+              >
                 know more
               </button>
             </div>

@@ -10,9 +10,9 @@ import img5 from "../image/choose-2.png";
 import img6 from "../image/choose-3.png";
 import img7 from "../image/choose-shape-1.png";
 import img8 from "../image/choose-shape-2.png";
-import { BsFillPlayFill } from 'react-icons/bs';
+import { BsFillPlayFill } from "@react-icons/all-files/bs/BsFillPlayFill";
 
-function ChooseSection() {
+function ChooseSection(props) {
   return (
     <section className="choose-section padding100">
       <Container>
@@ -22,7 +22,7 @@ function ChooseSection() {
               <span className="fs-6 fw-bolder text-danger text-capitalize ps-5">
                 Why Choose Us
               </span>
-              <h2 className="display-4 fw-bold lh-1 py-3">
+              <h2 className="display-5 fw-bold lh-1 py-3">
                 We ensure the best solution for you
               </h2>
             </div>
@@ -71,7 +71,15 @@ function ChooseSection() {
               <img src={img5} className="choose-2" />
               <img src={img6} className="choose-3" />
               <div className="play-button">
-                <a href="#" className="d-block m-auto bg-danger fs-3">
+                <a
+                  style={{
+                    backgroundColor:
+                      props.check == true ? `${props.colors}` : "#dc3545",
+                    transition: "all 0.5s",
+                  }}
+                  href="#"
+                  className="d-block m-auto fs-3"
+                >
                   <BsFillPlayFill />
                 </a>
               </div>

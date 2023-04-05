@@ -8,17 +8,22 @@ import Row from "react-bootstrap/esm/Row";
 import { useState } from "react";
 
 function App() {
-  let colorArray = ["black", "blue", "red", "yellow", "green", "cyan"];
+  let colorArray = ["black", "blue", "#dc3545", "yellow", "green", "cyan"];
   let [state, setState] = useState();
+  let [check,setCheck] = useState(false);
   return (
     <div>
       <div className="color-changer">
         <Row>
           {colorArray.map((v, i) => {
+            const setColor = () => {
+              setCheck(true);
+              setState(v);
+            }
             return (
               <Col key={i}>
                 <button
-                  onClick={() => setState(v)}
+                  onClick={() => setColor()}
                   className="box"
                   style={{ backgroundColor: `${v}` }}
                 ></button>
@@ -27,12 +32,11 @@ function App() {
           })}
         </Row>
       </div>
-      {console.log(state)}
       <Header />
       <main>
-        <HeroSection colors={state} />
-        <AboutSection colors={state} />
-        <ChooseSection colors={state} />
+        <HeroSection colors={state} check={check} />
+        <AboutSection colors={state} check={check} />
+        <ChooseSection colors={state} check={check} />
       </main>
     </div>
   );
