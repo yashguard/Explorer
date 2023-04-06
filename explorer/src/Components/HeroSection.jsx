@@ -9,7 +9,7 @@ function HeroSection(props) {
     <section className="hero-section">
       <Carousel fade>
         <Carousel.Item className="vh-100">
-          <img className="d-block w-100" src={bgImg1} alt="First slide" />
+          <img className="d-block w-100 vh-100" src={bgImg1} alt="First slide" />
           <Carousel.Caption>
             <h1 className="display-2 fw-semibold lh-1">
               Digital{" "}
@@ -42,7 +42,7 @@ function HeroSection(props) {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="vh-100">
-          <img className="d-block w-100" src={bgImg2} alt="First slide" />
+          <img className="d-block w-100 vh-100" src={bgImg2} alt="First slide" />
           <Carousel.Caption>
             <h1 className="display-2 fw-semibold lh-1">
               Unique{" "}
@@ -75,7 +75,7 @@ function HeroSection(props) {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="vh-100">
-          <img className="d-block w-100" src={bgImg3} alt="First slide" />
+          <img className="d-block w-100 vh-100" src={bgImg3} alt="First slide" />
           <Carousel.Caption>
             <h1 className="display-2 fw-semibold lh-1">
               Modern{" "}
